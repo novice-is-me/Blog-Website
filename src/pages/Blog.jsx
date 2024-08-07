@@ -25,7 +25,7 @@ const Blog = () => {
             <AdminView/> 
             :
             <div className=' my-5'> 
-                <h1 className=' text-center mb-5 text-warning text-uppercase'>Hottest Blog Today</h1>
+                <h1 className=' text-center mb-5 text-danger text-uppercase fw-bold'>Hottest Blog Today</h1>
                 { token ? 
                     <div className='d-flex justify-content-center gap-4 my-3'>
                     <Button href='/addPost' className='btn btn-primary'>Add Post</Button>
