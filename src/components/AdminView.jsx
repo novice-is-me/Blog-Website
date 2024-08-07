@@ -32,7 +32,7 @@ const AdminView = () => {
             if (data.message === "Post deleted successfully") {
                 Swal.fire({
                     title: 'Post Deleted',
-                    text: 'The post has been deleted',
+                    text: 'The post has been deleted!',
                     icon: 'success'
                 });
                 setPosts(posts.filter(post => post._id !== postId));
