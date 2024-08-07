@@ -18,7 +18,7 @@ const ViewPost = () => {
     }, [id]);
 
     const fetchPost = () => {
-        fetch(`${import.meta.env.VITE_API_URL}/posts/getPost/${id}`)
+        fetch(`https://blog-api-9a4i.onrender.com/posts/getPost/${id}`)
             .then(res => res.json())
             .then(data => {
                 if (data && data.result) {
@@ -34,7 +34,7 @@ const ViewPost = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch(`${import.meta.env.VITE_API_URL}/posts/addComment/${id}`, {
+        fetch(`https://blog-api-9a4i.onrender.com/posts/addComment/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json',

@@ -12,7 +12,7 @@ const AddPost = () => {
     const handleAdd = (e) => {
         e.preventDefault();
 
-        fetch(`${import.meta.env.VITE_API_URL}/posts/addPost`, {
+        fetch(`https://blog-api-9a4i.onrender.com/posts/addPost`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json',
