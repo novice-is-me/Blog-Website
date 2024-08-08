@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect, createContext } from 'react';
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import { Container } from 'react-bootstrap';
 import AppNavbar from './components/AppNavbar';
 import Home from './pages/Home';
@@ -16,6 +16,7 @@ import AdminView from './components/AdminView';
 export const TokenContext = createContext();
 
 function App() {
+
   const [token, setToken] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
 
@@ -24,13 +25,19 @@ function App() {
     if (tokenStored) {
       setToken(tokenStored);
       const decodedToken = jwtDecode(tokenStored);
+      console.log('Decoded Token:', decodedToken); 
       setIsAdmin(decodedToken.isAdmin === true);
     }
   }, []);
 
+  useEffect(() =>{
+    console.log('Token:', token);
+    console.log('isAdmin:', isAdmin);
+  });
+
   return (
     <Router>
-      <TokenContext.Provider value={{ token, setToken, isAdmin, setIsAdmin }}>
+      <TokenContext.Provider value={{ token, setToken, isAdmin }}>
         <AppNavbar />
         <Container>
           <Routes>
@@ -43,6 +50,7 @@ function App() {
             <Route path='/addPost' element={<AddPost/>}/>
             <Route path='/myPosts' element={<EditPost/>}/>
             <Route path='/adminView' element={<AdminView/>}/>
+            {/* Add other routes here */}
           </Routes>
         </Container>
       </TokenContext.Provider>
