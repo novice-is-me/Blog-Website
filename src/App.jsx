@@ -37,7 +37,7 @@ function App() {
 
   return (
     <Router>
-      <TokenContext.Provider value={{ token, setToken, isAdmin }}>
+      <TokenContext.Provider value={{ token, setToken, isAdmin, setIsAdmin }}>
         <AppNavbar />
         <Container>
           <Routes>
