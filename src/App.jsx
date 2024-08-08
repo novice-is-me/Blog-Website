@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { useState, useEffect, createContext } from 'react';
-import jwtDecode from 'jwt-decode';
+import {jwtDecode} from 'jwt-decode';
 import { Container } from 'react-bootstrap';
 import AppNavbar from './components/AppNavbar';
 import Home from './pages/Home';
